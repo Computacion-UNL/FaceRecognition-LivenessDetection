@@ -12,7 +12,7 @@
 El presente Trabajo de Titulación fue desarrollado por:
 - Dayanna Magdalla Alvarado Castillo - dayanna.alvarado@unl.edu.ec
 
-Con la dirección de la:
+Con la dirección de:
 - Ing. Oscar Miguel Cumbicus Pineda, Mg. Sc. - oscar.cumbicus@unl.edu.ec
 
 ## Descripción y Contexto:
