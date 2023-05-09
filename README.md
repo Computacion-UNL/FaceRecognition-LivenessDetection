@@ -18,9 +18,9 @@ Con la dirección de:
 ## Descripción y Contexto:
 El presente repositorio contiene el código del proyecto de Titulación denominado **"Prototipo de reconocimiento facial con detección de vida para el registro de asistencias en el laboratorio de software"** de la Carrera de Ingeniería en Sistemas/Computación de la Universidad Nacional de Loja.
 
-El repositorio contiene 3 directorios: 
+El repositorio se compone de 3 directorios: 
 1. **Detección de vida:**  
-Esta carpeta contiene los modelos con los que se experimentó la detección de vida, contiene el modelo desarrollado para el análisis de profundidad y el contador de parpadeos.  
+Esta carpeta contiene los modelos con los que se experimentó la detección de vida, se presenta el modelo desarrollado para el análisis de profundidad y el contador de parpadeos.  
 
     **Análisis de porfundidad**  
     
