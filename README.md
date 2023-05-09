@@ -19,9 +19,45 @@ Con la dirección de:
 El presente repositorio contiene el código del proyecto de Titulación denominado **"Prototipo de reconocimiento facial con detección de vida para el registro de asistencias en el laboratorio de software"** de la Carrera de Ingeniería en Sistemas/Computación de la Universidad Nacional de Loja.
 
 El repositorio contiene 3 directorios: 
-1. **Detección de vida:** Esta carpeta contiene los modelos con los que se experimentó la detección de vida, contiene el modelo desarrollado para el análisis de profundidad y el contador de parpadeos, dentro de estos directorios se encuentra el archivo ejecutable .py y un archivo TEST.md, en este último se ubican algunos ejemplos de la experimentación.
-2. **Reconocimiento facial:** Esta carpeta contiene los modelos con los que se experimentó el reconocimiento facial. En el caso del directorio  "Modelos Eigen-Face, Fisher-Faces y LBPH-Face" contiene el archivo captura.py el cual es útil para capturar los frames necesarios para la base de datos, dentro del directorio de cada modelo, a más del archivo de reconocimiento se encuentra también el archivo que contiene código necesario para el entrenamiento. En el subdirectorio "Modelo Face-Recognition" se encuentra el archivo ejecutable para llevar a cabo el reconocimiento facial.
-3. **Asistencias:** Este directorio almacena el módulo web de registro de asistencias con reconocimiento facial y detección de vida, desarrollado en Odoo v13, se trata del prototipo final que contiene el modelo Face-Recognition y el modelo de análisis de profundidad.
+1. **Detección de vida:**  
+Esta carpeta contiene los modelos con los que se experimentó la detección de vida, contiene el modelo desarrollado para el análisis de profundidad y el contador de parpadeos.  
+
+    **Análisis de porfundidad**  
+    
+        - El método de análisis de profundidad es un modelo de detección de vida siguiendo un enfoque pasivo, en el cual no es necesario que el usuario interactuaé con el sistema.
+        - Ejecutar el archivo profundidad.py, en el cual se almacena el código correspondiente.
+        - Ejemplos de pruebas realizadas se presenta en el archivo TEST.md
+
+   **Contador de parpadeos**  
+   
+        - El modelo contador de parpadeos pretende ser un modelo de detección de vida siguiendo un enfoque activo, en el cual el usuario deberá interactuar con el sistema. El modelo solicita al usuario un número de parpadeos cada vez aleatorio, el usuario deberá parpadear las veces correspondientes, si se cumplen, se considerará al usuario como individuo en tiempo real frente al punto de captura, si no se cumplen o se exceden se considerará como ataque de presentación.Todo esto dado que, mediante la presentación de una fotografía frente al punto de captura esta no efectuará la acción solicitada, y en caso de ser un video, este no responderá al número exacto solicitado ya que el número que se solicita es randómico.
+        - Ejecutar el archivo contador.py, en el cual se almacena el código correspondiente. 
+        - Ejemplos de pruebas realizadas se presenta en el archivo **TEST.md**
+ 
+2. **Reconocimiento facial:** Esta carpeta contiene los modelos Eigen-Face, Fisher-Face, LBPH-Face y Face-recognition, con los que se experimentó el reconocimiento facial.
+
+      **Modelos preentrenados Eigen-Face, Fisher-Face y LBPH-Face**
+
+      * Los modelos preentrenados Eigen-Face, Fisher-Face y LBPH-Face son útiles para realizar reconocimiento facial, estos requieren _aprender_ las carácteristicas faciales de los usuarios del sistema, por tanto se requiere una base de datos con almenos 300 fotogramas por cada individuo.
+      * El código respectivo para facilitar la captura de mencionados fotogramas está en el archivo **_captura.py_**, al ejecutar el archivo se abrirá la cámara del computador, el usuario deberá colocarse frente al punto de captura y realizar diversos gestos, estos fotogramas serán almacenados dentro del directorio **_Data/Nombre del Usuario/_**. Para que se pueda capturar los rostros se necesita un modelo de detección de rostro, para ello se utilza en modelo preentrenado haarcascade disponible en el archivo **_haarcascade_frontalface_default.xml_**. Un ejemplo de la creación de a BD se presenta a continuación.
+
+      ![WhatsApp Image 2022-03-19 at 2 06 19 AM](https://user-images.githubusercontent.com/46323169/159111369-3bf2fd48-7ad1-4110-a807-8e03c228bd7f.jpeg)
+
+      * Posteriormente se deberá entrenar cada uno de los modelos con la base de datos construida, para ello, se requiere ejecutar el archivo **_Entrenamiento.py_** disponible dentro de los directorios de cada modelo. Al concluir el entrenamiento automaticamente se creará un archivo **_.xml_** con el nombre del modelo que se esté entrenando. Este último archivo contiene la codificación facial de cada uno de los rostros de la base de datos.
+      * Finalmente ejecutar el archivo **_reconocimiento.py_** disponible dentro del directorio de cada modelo de reconocimiento. Se abrirá la cámara del computador y se podrá realizar el reconocimiento facial.
+
+    **Modelo preentrenado Face-Recognition.**
+      * El modelo preentrenado Face-Recognition requiere tener una base de datos que contenga únicamente una fotografía de cada usuario.
+      * Para crear la base de datos crear un directorio **_Data/faces/_** dentro de esta carperta incluir las fotografías identificadas según el nombre del isuario. Un ejemplo se presenta en la figura a continuación.
+      
+      ![WhatsApp Image 2022-03-19 at 1 58 45 AM](https://user-images.githubusercontent.com/46323169/159111125-13c98277-fbac-492c-a591-64080d67f89f.jpeg)
+      
+
+      * Este modelo ya incluye un detector facial, por tanto no es necesario ejecutar uno externo.
+      * Para realizar el reconocimiento de rostros ejecutar el archivo **_reconocer.py_**.
+
+
+4. **Asistencias:** Este directorio almacena el módulo web de registro de asistencias con reconocimiento facial y detección de vida, desarrollado en Odoo v13, se trata del prototipo final que contiene el modelo Face-Recognition y el modelo de análisis de profundidad.
 
 
 ## Información adicional: 
