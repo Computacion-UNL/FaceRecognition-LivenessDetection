@@ -25,7 +25,7 @@ El repositorio contiene 3 directorios:
 
 
 ## Información adicional: 
-Para conocer más de Odoo ingrese a https://www.odoo.com/es_ES/
+Para conocer más de Odoo ingrese a https://www.odoo.com/es_ES/  
 
 Para acceder a la documentación de Desarrolladores de Odoo ingrese a https://www.odoo.com/documentation/13.0/
 
